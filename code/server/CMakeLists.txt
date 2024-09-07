@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(omohserver)
 
-add_subdirectory("../fgame" "./fgame")
+# add_subdirectory("../fgame" "./fgame")
 
 file(GLOB_RECURSE SOURCES_SERVER "./*.c*")
 
