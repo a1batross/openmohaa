@@ -3,7 +3,7 @@ project(omohclient)
 
 option(NO_OPENAL "Use older sound-system" FALSE)
 
-add_subdirectory("../cgame" "./cgame")
+# add_subdirectory("../cgame" "./cgame")
 
 file(GLOB SOURCES_CLIENT "./*.c*")
 file(GLOB_RECURSE SOURCES_UILIB "../uilib/*.c*")
