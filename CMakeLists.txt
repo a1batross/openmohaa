@@ -83,25 +83,25 @@ add_subdirectory("code/sys")
 ## Server app
 add_subdirectory("code/server")
 
-add_executable(omohaaded "code/null/null_client.c" "code/null/null_input.c" "code/null/null_snddma.c")
-target_compile_definitions(omohaaded PRIVATE APP_MODULE DEDICATED)
-target_compile_features(omohaaded PUBLIC cxx_nullptr)
-target_compile_features(omohaaded PUBLIC c_variadic_macros)
-target_link_libraries(omohaaded PRIVATE omohserver)
-target_link_libraries(omohaaded PRIVATE syslib)
-target_link_libraries(omohaaded PRIVATE qcommon qcommon_standalone)
+#add_executable(omohaaded "code/null/null_client.c" "code/null/null_input.c" "code/null/null_snddma.c")
+#target_compile_definitions(omohaaded PRIVATE APP_MODULE DEDICATED)
+#target_compile_features(omohaaded PUBLIC cxx_nullptr)
+#target_compile_features(omohaaded PUBLIC c_variadic_macros)
+#target_link_libraries(omohaaded PRIVATE omohserver)
+#target_link_libraries(omohaaded PRIVATE syslib)
+#target_link_libraries(omohaaded PRIVATE qcommon qcommon_standalone)
 
 # Gamespy dependency
-target_include_directories(omohaaded PUBLIC "code/qcommon" "code/script" "code/gamespy" "code/server")
-set_target_properties(omohaaded PROPERTIES OUTPUT_NAME "omohaaded${TARGET_BASE_SUFFIX}${TARGET_ARCH_SUFFIX}")
-set_target_properties(omohaaded PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
+#target_include_directories(omohaaded PUBLIC "code/qcommon" "code/script" "code/gamespy" "code/server")
+#set_target_properties(omohaaded PROPERTIES OUTPUT_NAME "omohaaded${TARGET_BASE_SUFFIX}${TARGET_ARCH_SUFFIX}")
+#set_target_properties(omohaaded PROPERTIES DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 
-if (MSVC)
-	target_link_options(omohaaded PRIVATE "/MANIFEST:NO")
-	INSTALL(FILES $<TARGET_PDB_FILE:omohaaded> DESTINATION "./" OPTIONAL)
-endif()
+#if (MSVC)
+#	target_link_options(omohaaded PRIVATE "/MANIFEST:NO")
+#	INSTALL(FILES $<TARGET_PDB_FILE:omohaaded> DESTINATION "./" OPTIONAL)
+#endif()
 
-INSTALL(TARGETS omohaaded DESTINATION "./")
+#INSTALL(TARGETS omohaaded DESTINATION "./")
 
 if (NOT BUILD_NO_CLIENT)
 	## Client app
